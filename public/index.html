@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
-    <title> Hello </title>
+    <title> Book </title>
     <script type="text/javascript" src="lib/angular/angular.js" ></script>
     <script type="text/javascript" src="js/app.js" ></script>
     <link rel="stylesheet" type="text/css" href=" lib/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body ng-controller="mainCtrl">
-    <h1> Hello </h1>
+    <h1> BOOK Information </h1>
     <table>
          <thead>
          	<th>Title</th>
@@ -15,8 +15,8 @@
          </thead>
          <tbody>
             <tr ng-repeat="book in books">
-            	<td>  {{book.title}}</td>
-                <td> {{book.price | currency:'B'}}</td>
+            	<td>  {{book.title}} </td>
+                <td> {{book.price | currency}} </td>
             </tr>
          </tbody>    
      </table>
