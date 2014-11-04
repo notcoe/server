@@ -7,16 +7,16 @@
     <link rel="stylesheet" type="text/css" href=" lib/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body ng-controller="mainCtrl">
-    <div class="bg-primary"> My Book</div>
-    <table table class="table table-hover">
-         <thead align="right">          
+    <h2> My Book</h2>
+    <table table class="table table-bordered">
+         <thead class="bg-primary"  align="right">          
                 <th> Title </th>
                 <th> Price </th>                
          </thead>
          <tbody>
-            <tr class="bg-info" ng-repeat="book in books">
-            	<td align="left"> {{book.title}} </td>
-                <td align="left"> {{book.price | currency:'B'}} </td>
+            <tr class="bg-info"  ng-repeat="book in books">
+            	<td class="text-danger" align="left"> {{book.title}} </td>
+                <td class="text-danger" align="left"> {{book.price | currency:'B'}} </td>
             </tr>
          </tbody>    
      </table>
