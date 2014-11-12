@@ -1,22 +1,29 @@
 var express = require('express')
+var mongojs = require('mongojs')     //
+var bodyParser = require('body-parser')
 var app = express()
+var db = mongojs('my_server',['book']);   //connect database
 
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
 
 app.get('/api/book',function(reg,res){
-      var books = [
-           {title: 'Angular' ,price: 800},
-           {title: 'Node.jd' ,price: 600},
-           {title: 'CSS' ,price: 400},
-           {title: 'JavaScript' ,price: 900},
-           {title: 'MongoDB' ,price: 700},
-           {title: 'HTML5' ,price: 1200}
-      ];
-      res.send(books);
+
+      db.book.find({},function(err,docs){   //query database
+           res.send(docs);
+      });
+      
 })
 
-var server = app.listen(3000, function () {
+app.post('/api/book',function(req,res){
+    db.book.insert(req.body,function(err,docs){   //query database
+           res.send(docs);
+      });
 
+});
+
+var server = app.listen(3000, function () {
   console.log("server is running")
 
 })
+

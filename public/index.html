@@ -9,12 +9,14 @@
 <body ng-controller="mainCtrl">
     <h2 class="text-info"> My Book...</h2>
     <table table class="table table-bordered">
-         <thead class="bg-primary"  align="right">          
+         <thead class="bg-primary"  align="right">     
+                <th> #ID </th>     
                 <th> Title </th>
                 <th> Price </th>                
          </thead>
          <tbody>
             <tr class="bg-info"  ng-repeat="book in books">
+                <td class="text-danger" align="left"> {{book.id}} </td>
             	<td class="text-danger" align="left"> {{book.title}} </td>
                 <td class="text-danger" align="left"> {{book.price | currency:'B'}} </td>
             </tr>
